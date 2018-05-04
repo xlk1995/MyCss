@@ -1,0 +1,31 @@
+.loading{
+  height:200px;
+  width:200px;
+  border:1px solid red;
+  position:relative;
+}
+.loading::before,.loading::after{
+  content:'';
+  height:20px;
+  width:20px;
+  border-radius:50%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  background: black;
+  animation: s 1.5s infinite linear;      //名字  时间  无限  线性
+}
+.loading::after{
+  animation-delay: 0.75s;
+}
+@keyframes s {
+  0%{
+    width:0;height:0;opacity: 100%;      //透明度，100%表示不透明
+  }
+  100%{
+    width:100px;height:100px;opacity:0;  
+  }
+}
